@@ -1,0 +1,55 @@
+from random import randint
+print ("CARTA, FORBICI, SASSO Contro Fixiano")
+premio = "nuna bestemmia creativa"
+print("Se vincerai, avrai diritto a " + premio)
+
+print("\nCome ti chiami??!")
+nome = input()
+print("Buona fortuna BABBEO!!!")
+
+punteggio_giocatore = 0
+punteggio_Fixiano = 0
+
+comando = ""
+while(comando != "ORA BASTA"):
+  print("\nQuale arma scegli?")
+  armi = ["Carta", "Forbici", "Sasso"]
+  for arma in armi:
+    print(arma)
+  print("premi 0 per Carta, 1 per Forbici, o 2 per Sasso" )  
+  numero_scelto = int(input())
+  arma_scelta = armi[numero_scelto]
+  print ("hai scelto " + arma_scelta)
+
+  arma_Fixiano =""
+  arma_Fixiano = randint(0,2)
+  arma_Fixiano = armi [arma_Fixiano]
+
+  print("...anche io ho scelto la mia!")
+
+  verdetto = ""
+  if(arma_scelta == "Carta" and arma_Fixiano == "Sasso"):
+    verdetto = nome + " Bravo tu si che sei intelligente!"
+    punteggio_giocatore = punteggio_giocatore + 1
+  if(arma_scelta == "Forbici" and arma_Fixiano == "Carta"):
+    verdetto = nome + " Bravo tu si che sei intelligente!"
+    punteggio_giocatore = punteggio_giocatore + 1
+  if(arma_scelta == "Sasso" and arma_Fixiano == "Forbici"):
+    verdetto = nome + " Bravo tu si che sei intelligente!"
+    punteggio_giocatore = punteggio_giocatore + 1
+  if(arma_scelta == arma_Fixiano):
+      verdetto = "Pareggio: Non mi abbatto ne festeggio"
+  if(verdetto ==""):
+    verdetto = nome + " Ti ho Spalmato sulla mia MANO!!!!!!! MUHAHAHA"
+    punteggio_Fixiano = punteggio_Fixiano = 1
+
+  print("\nPremi invio per scoprire se hai vinto!")
+  input()
+  print("Fixiano ha scelto " + arma_Fixiano)
+  print(verdetto)
+  print("\nPUNTEGGIO:")
+  print(nome + "-Fixiano : " +  str(punteggio_giocatore) + "-" + str(punteggio_Fixiano)
+  print("\nScrivi 'ORA BASTA' se non ne puoi piu")
+  comando = input()
+
+print ("GIORCO TERMINATO")
